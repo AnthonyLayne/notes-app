@@ -1,4 +1,4 @@
-import { CREATE_NOTE, DELETE_NOTE, EDIT_NOTE } from "./types";
+import { CREATE_NOTE, DELETE_NOTE, EDIT_NOTE, LOG_IN, LOG_OUT } from "./types";
 
 export const createNote = ({ title, description }) => {
   return { type: CREATE_NOTE, payload: { title, description } };
@@ -14,4 +14,12 @@ export const editNote = ({ id, title, description }) => {
   if (description !== undefined) payload.description = description;
 
   return { type: EDIT_NOTE, payload };
+};
+
+export const logIn = (username) => {
+  return { type: LOG_IN, payload: username };
+};
+
+export const logOut = ({ username, loggedIn }) => {
+  return { type: LOG_OUT, payload: { username, loggedIn } };
 };

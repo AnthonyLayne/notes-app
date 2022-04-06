@@ -14,15 +14,23 @@ export function notesReducer(state = {}, action) {
   switch (action.type) {
     case CREATE_NOTE: {
       // PAYLOAD === { title, description }
-      const id = uuidv4();
+      const id = uuidv4(); //gives random id
 
       return {
+        //making a copy of state
+        //then giving it the new state object
+        //...action.payload is putting in the new values
+        //of title or description
         ...state,
         [id]: { id, ...action.payload },
       };
     }
     case DELETE_NOTE: {
       // PAYLOAD === id
+      //defining what id is
+      //making a copy of state
+      //deleting the id
+      //then returning state copy that was modified
       const id = action.payload;
       const stateCopy = { ...state };
       delete stateCopy[id];
