@@ -1,0 +1,7 @@
+.appWrapper {
+  border: 1px solid red;
+}
+
+.appWrapper > .app {
+  border: 1px solid green;
+}
