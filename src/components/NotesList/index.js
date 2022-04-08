@@ -5,6 +5,9 @@ export default function NotesList() {
     <div className="notesListWrapper">
       <h2 className="header">Your Notes:</h2>
       <button className="primary-button">Alphabetize</button>
+      <div className="note">
+        <link>{}</link>
+      </div>
     </div>
   );
 }

@@ -10,8 +10,12 @@ export default function Header() {
         <br />
         Notes
       </h1>
-      <button className="primary-button">View Your Notes</button>
-      <button className="primary-button">+ Create A New Note</button>
+      <a href="/">
+        <button className="primary-button">View Your Notes</button>
+      </a>
+      <a href="/edit">
+        <button className="primary-button">+ Create A New Note</button>
+      </a>
     </div>
   );
 }

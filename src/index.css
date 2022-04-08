@@ -217,7 +217,8 @@ h3 {
   font-size: var(--h3FontSize);
 }
 
-button.primary-button {
+button.primary-button,
+a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -233,6 +234,8 @@ button.primary-button {
   width: 240px;
   height: 55px;
   border: 1px solid var(--borderColor);
+
+  text-decoration: none;
 }
 
 button.secondary-button {
