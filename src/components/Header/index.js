@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./index.css";
 
@@ -10,12 +11,14 @@ export default function Header() {
         <br />
         Notes
       </h1>
-      <a href="/">
-        <button className="primary-button">View Your Notes</button>
-      </a>
-      <a href="/edit">
-        <button className="primary-button">+ Create A New Note</button>
-      </a>
+
+      <Link to="/" className="primary-button">
+        View Your Notes
+      </Link>
+
+      <Link to="/edit" className="primary-button">
+        + Create A New Note
+      </Link>
     </div>
   );
 }

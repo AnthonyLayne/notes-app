@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 
-import { CREATE_NOTE, DELETE_NOTE, EDIT_NOTE } from "./action-types";
+import { CREATE_NOTE, DELETE_NOTE, EDIT_NOTE } from "../actions/types";
 
 /** Example state:
  * ```

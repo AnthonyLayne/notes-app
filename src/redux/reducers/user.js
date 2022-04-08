@@ -1,4 +1,4 @@
-import { LOG_IN, LOG_OUT } from "./action-types";
+import { LOG_IN, LOG_OUT } from "../actions/types";
 
 const initialState = {
   username: null,
