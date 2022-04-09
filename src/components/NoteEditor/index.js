@@ -15,7 +15,7 @@ const NoteEditor = ({ id, title, description }) => {
   return (
     <div className="noteEditorWrapper">
       <form onSubmit={handleSubmit}>
-        <h3>Creat Note:</h3>
+        <h3>{id ? "Edit" : "Create"} Note:</h3>
         <input placeholder="New Note" onChange={handleChange} />
         <textarea placeholder="Note Content" rows={12} />
       </form>
