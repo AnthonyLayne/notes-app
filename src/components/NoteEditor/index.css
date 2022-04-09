@@ -33,6 +33,6 @@
   resize: vertical;
 }
 
-.noteEditorWrapper > button {
+.noteEditorWrapper > form > button {
   margin-top: 20px;
 }

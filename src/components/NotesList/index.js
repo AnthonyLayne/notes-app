@@ -1,17 +1,18 @@
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 import "./index.css";
 
-function NotesList({ setSelectedId, notes }) {
+function NotesList({ notes }) {
   return (
     <div className="notesListWrapper">
       <h2 className="header">Your Notes:</h2>
       <button className="primary-button">Alphabetize</button>
 
       {Object.entries(notes).map(([id, note]) => (
-        <button key={id} type="button" className="note" onClick={() => setSelectedId(id)}>
+        <Link key={id} to={`/edit/${id}`} className="note">
           {note.title}
-        </button>
+        </Link>
       ))}
     </div>
   );

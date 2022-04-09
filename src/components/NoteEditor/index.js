@@ -5,8 +5,10 @@ import { createNote, deleteNote, editNote } from "../../redux/actions";
 
 import "./index.css";
 
-const NoteEditor = ({ id, title, description }) => {
-  const [noteState, setNoteState] = useState({});
+const EMPTY_NOTE = { title: "empty title", description: "" };
+
+const NoteEditor = ({ note }) => {
+  const [noteState, setNoteState] = useState(note ? { ...note } : EMPTY_NOTE);
 
   const handleSubmit = () => {};
 
@@ -14,22 +16,24 @@ const NoteEditor = ({ id, title, description }) => {
 
   return (
     <div className="noteEditorWrapper">
+      {noteState.title}
+
       <form onSubmit={handleSubmit}>
-        <h3>{id ? "Edit" : "Create"} Note:</h3>
+        <h3>{note ? "Edit" : "Create"} Note:</h3>
         <input placeholder="New Note" onChange={handleChange} />
         <textarea placeholder="Note Content" rows={12} />
+        <button type="submit" className="primary-button">
+          Save
+        </button>
       </form>
-      <button className="primary-button">Save</button>
     </div>
   );
 };
 
-const mapStateToProps = (state, { id }) => {
-  return {};
-  return {
-    title: state.notes[id].title,
-    description: state.notes[id].description,
-  };
+const mapStateToProps = (reduxState, componentProps) => {
+  const { id } = componentProps;
+
+  return id ? { note: reduxState.notes[id] } : {};
 };
 
 export default connect(mapStateToProps, { createNote, deleteNote, editNote })(NoteEditor);
