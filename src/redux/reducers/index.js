@@ -8,8 +8,8 @@ import { userReducer } from "./user";
  * ```
  * {
  *   notes: {
- *    "fsdafsa1": { id: "fsdafsa1", title: "", description: "" },
- *    "3892472q": { id: "3892472q", title: "", description: "" },
+ *    "fsdafsa1": { id: "fsdafsa1", title: "", description: "", createdAt: 1649466420222 },
+ *    "3892472q": { id: "3892472q", title: "", description: "", createdAt: 1649466420223 },
  *   },
  *   user: {
  *    username: "asdf",

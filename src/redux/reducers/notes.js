@@ -5,8 +5,8 @@ import { CREATE_NOTE, DELETE_NOTE, EDIT_NOTE } from "../actions/types";
 /** Example state:
  * ```
  * {
- *   "fsdafsa1": { id: "fsdafsa1", title: "", description: "" },
- *   "3892472q": { id: "3892472q", title: "", description: "" },
+ *   "fsdafsa1": { id: "fsdafsa1", title: "", description: "", createdAt: 1649466420222 },
+ *   "3892472q": { id: "3892472q", title: "", description: "", createdAt: 1649466420223 },
  * }
  * ```
  */
@@ -22,7 +22,7 @@ export function notesReducer(state = {}, action) {
         //...action.payload is putting in the new values
         //of title or description
         ...state,
-        [id]: { id, ...action.payload },
+        [id]: { id, ...action.payload, createdAt: Date.now() },
       };
     }
     case DELETE_NOTE: {
