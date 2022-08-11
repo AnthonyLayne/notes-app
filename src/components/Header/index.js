@@ -6,11 +6,7 @@ import "./index.css";
 export default function Header() {
   return (
     <div className="headerWrapper">
-      <h1 className="noteHeader">
-        Lambda
-        <br />
-        Notes
-      </h1>
+      <h1 className="noteHeader">Notes</h1>
 
       <Link to="/" className="primary-button">
         View Your Notes
