@@ -8,7 +8,7 @@ export default function Header() {
     <div className="headerWrapper">
       <h1 className="noteHeader">Notes</h1>
 
-      <Link to="/" className="primary-button">
+      <Link to="/notes" className="primary-button">
         View Your Notes
       </Link>
 

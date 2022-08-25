@@ -7,7 +7,6 @@ function NotesList({ notes }) {
   return (
     <div className="notesListWrapper">
       <h2 className="header">Your Notes:</h2>
-      <button className="primary-button">Alphabetize</button>
 
       {Object.entries(notes).map(([id, note]) => (
         <Link key={id} to={`/edit/${id}`} className="note">

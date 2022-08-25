@@ -25,7 +25,7 @@ const NoteEditor = ({ notes, createNote, editNote }) => {
     if (note) editNote({ id: noteId, title: noteState.title, description: noteState.description });
     else createNote({ title: noteState.title, description: noteState.description });
 
-    navigate("/");
+    navigate("/notes");
   };
 
   return (

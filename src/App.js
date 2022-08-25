@@ -6,6 +6,7 @@ import NotesList from "./components/NotesList";
 import NoteEditor from "./components/NoteEditor";
 
 import "./App.css";
+import { useState } from "react";
 
 // www.notes.com/
 // www.notes.com/edit
@@ -15,17 +16,31 @@ import "./App.css";
 // example: if !loggedIn ? Login : NotesList
 
 function App() {
-  return (
+  const [loggedIn, setIsLoggedIn] = useState(true);
+
+  return loggedIn ? (
     <Router>
       <div className="appWrapper">
         <div className="app">
           <Header />
 
           <Routes>
-            <Route exact path="/" element={<Login />} />
             <Route exact path="/notes" element={<NotesList />} />
             <Route exact path="edit/" element={<NoteEditor />} />
             <Route exact path="edit/:noteId" element={<NoteEditor />} />
+          </Routes>
+        </div>
+      </div>
+    </Router>
+  ) : (
+    <Router>
+      {" "}
+      <div className="appWrapper">
+        <div className="app">
+          <Header />
+
+          <Routes>
+            <Route exact path="/" element={<Login />} />
           </Routes>
         </div>
       </div>
