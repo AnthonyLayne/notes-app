@@ -1,5 +1,14 @@
 const db = require("../../data/db-config");
 
+function getAllNotes() {
+  //return db("notes").leftJoin("user_id", "note_id").select("notes.*");
+  return db("notes");
+}
+
+async function getAllUserNotes(user_username) {
+  return await db("notes").where("user_username", user_username);
+}
+
 async function getNoteById(note_id) {
   const data = await db("notes").where("note_id", note_id);
   const firstRow = data[0];
@@ -12,6 +21,22 @@ async function getNoteById(note_id) {
   return note;
 }
 
+// function addNote(newNote) {
+//   return db("notes").insert(newNote);
+// }
+const addNote = async (note_description, note_title, user_username) => {
+  const newNote = await db("notes").insert(note_description, note_title, user_username);
+  return newNote;
+};
+
+const deleteById = (note_id) => {
+  return db("notes").where("note_id", note_id).del();
+};
+
 module.exports = {
   getNoteById,
+  getAllNotes,
+  getAllUserNotes,
+  addNote,
+  deleteById,
 };
